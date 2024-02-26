@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-counter-controls',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter-controls.component.css']
 })
 export class CounterControlsComponent {
+  constructor(private counterService:CounterService){}
+
+  increment(){
+    this.counterService.onIncrement()
+  }
+  decrement(){
+   this.counterService.onDecrement();
+  }
+
 
 }
