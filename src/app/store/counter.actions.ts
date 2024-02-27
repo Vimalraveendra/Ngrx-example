@@ -2,7 +2,13 @@ import { createAction, props } from "@ngrx/store";
 import { CounterActionTypes } from "./counter.types";
 
 
-
+export const init =createAction(
+    CounterActionTypes.INIT_LOCAL_STORAGE
+)
+export const set = createAction(
+    CounterActionTypes.SET_LOCAL_STORAGE,
+    props<{value:number}>()
+)
 export const incrementCount =createAction(
     CounterActionTypes.INCREMENT_COUNTER,
     props<{value:number}>()
