@@ -1,10 +1,28 @@
-import { createAction } from "@ngrx/store";
+import { createAction, props } from "@ngrx/store";
+import { CounterActionTypes } from "./counter.types";
+
 
 
 export const incrementCount =createAction(
-    '[Counter]  IncrementCount'
+    CounterActionTypes.INCREMENT_COUNTER,
+    props<{value:number}>()
 )
 
 export const decrementCount = createAction(
-    '[Counter] decrementCount'
+    CounterActionTypes.DECREMENT_COUNTER,
+    props<{value:number}>()
 )
+
+
+// export class IncrementCount implements Action{
+//     readonly type:string=CounterActionTypes.INCREMENT_COUNTER;
+//     constructor(public value:number){}
+// }
+
+// export class DecrementCount implements Action{
+//     readonly type:string = CounterActionTypes.DECREMENT_COUNTER
+//     constructor(public value:0){}
+// }
+
+
+// export  type CounterActions = IncrementCount |DecrementCount
